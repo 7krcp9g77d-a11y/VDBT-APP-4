@@ -7,7 +7,6 @@ export default defineConfig({
   plugins: [
     react(),
     tailwindcss(),
-    // Hierdoor kunnen Aidan en Oliver de app op hun beginscherm zetten.
     VitePWA({
       registerType: "autoUpdate",
       includeAssets: ["icon-192.png", "icon-512.png"],
@@ -28,10 +27,15 @@ export default defineConfig({
       },
       workbox: {
         globPatterns: ["**/*.{js,css,html,png,svg}"],
-        // De app-schil blijft offline beschikbaar. De registraties zelf
-        // offline bufferen is een aparte stap — zie README, stap 8.
         navigateFallback: "index.html",
       },
     }),
   ],
+  build: {
+    rollupOptions: {
+      input: {
+        main: './index.html',
+      },
+    },
+  },
 });
