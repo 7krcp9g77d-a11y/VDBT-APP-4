@@ -16,8 +16,8 @@
  *     code (H.info, dagStatus, verplaatsingen, …) blijft werken zoals ze is.
  */
 import { useEffect, useState } from "react";
-import { supabase } from "./lib/supabase";
-import { laadAlles } from "./lib/db";
+import { supabase } from "./supabase";
+import { laadAlles } from "./db";
 import Login from "./components/Login";
 // import MedewerkerScherm from "./components/MedewerkerScherm";
 // import KantoorApp from "./components/KantoorApp";
